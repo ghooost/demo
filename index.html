@@ -2,8 +2,9 @@
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | LinesAgainstTheTime</title>
+    <title>Unity WebGL Player | Diamonds</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -20,7 +21,7 @@
       <!-- <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">LinesAgainstTheTime</div>
+        <div id="unity-build-title">Diamonds</div>
       </div> -->
     </div>
     <script>
@@ -57,15 +58,15 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/CheckSize2.loader.js";
+      var loaderUrl = buildUrl + "/Diamonds.loader.js";
       var config = {
-        dataUrl: buildUrl + "/CheckSize2.data",
-        frameworkUrl: buildUrl + "/CheckSize2.framework.js",
-        codeUrl: buildUrl + "/CheckSize2.wasm",
+        dataUrl: buildUrl + "/Diamonds.data",
+        frameworkUrl: buildUrl + "/Diamonds.framework.js",
+        codeUrl: buildUrl + "/Diamonds.wasm",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "OllyAtSeinajoki",
-        productName: "LinesAgainstTheTime",
-        productVersion: "0.1",
+        companyName: "DefaultCompany",
+        productName: "Diamonds",
+        productVersion: "0.1.0",
         showBanner: unityShowBanner,
       };
 
@@ -94,8 +95,8 @@
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "100%";
-        canvas.style.height = "100%";
+        canvas.style.width = "250px";
+        canvas.style.height = "600px";
       }
 
       loadingBar.style.display = "block";
@@ -107,9 +108,9 @@
           progressBarFull.style.width = 100 * progress + "%";
               }).then((unityInstance) => {
                 loadingBar.style.display = "none";
-                // fullscreenButton.onclick = () => {
-                //   unityInstance.SetFullscreen(1);
-                // };
+                fullscreenButton.onclick = () => {
+                  unityInstance.SetFullscreen(1);
+                };
               }).catch((message) => {
                 alert(message);
               });
